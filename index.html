@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CLIENTE API INSTRUMENTOS</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="codigo.js"></script>
+</head>
+<body>
+
+  <h1>🎸 Tienda de Instrumentos Musicales</h1>
+  <h2>Producto 3 — Desarrollo Web Integral</h2>
+
+  <!-- MENÚ PRINCIPAL -->
+  <p id="saludo"></p>
+
+  <div class="menu">
+    <button onclick="mostrarSeccion('secTodos'); getAll()">📋 MOSTRAR TODOS</button>
+    <button onclick="mostrarSeccion('secConsultar')">🔍 CONSULTAR</button>
+    <button class="soloAdmin" onclick="mostrarSeccion('secAgregar')">➕ AGREGAR</button>
+    <button class="soloAdmin" onclick="mostrarSeccion('secModificar')">✏️ MODIFICAR</button>
+    <button class="soloAdmin" onclick="mostrarSeccion('secEliminar')">🗑️ ELIMINAR</button>
+    <a href="login.html"><button class="btn-salir" onclick="sessionStorage.clear()">🚪 SALIR</button></a>
+  </div>
+
+  <!-- SECCIÓN: TODOS -->
+  <div id="secTodos" class="seccion">
+    <h1>Todos los Instrumentos</h1>
+    <div id="resp"></div>
+  </div>
+
+  <!-- SECCIÓN: CONSULTAR -->
+  <div id="secConsultar" class="seccion oculta">
+    <h1>Consultar Instrumento</h1>
+    ID <input type="number" id="txtId1">
+    <button onclick="getId()">BUSCAR POR ID</button>
+    <br>
+    <!-- NOMBRE <input type="text" id="txtNombre1">
+    <button onclick="getNombre()">BUSCAR POR NOMBRE</button>
+    <br><br> -->
+    <div id="respConsulta"></div>
+  </div>
+
+  <!-- SECCIÓN: AGREGAR -->
+  <div id="secAgregar" class="seccion oculta">
+    <h1>Agregar Instrumento</h1>
+    NOMBRE <input type="text" id="txtNombreAdd"> <br>
+    CATEGORIA <input type="text" id="txtCategoriaAdd"> <br>
+    MARCA <input type="text" id="txtMarcaAdd"> <br>
+    PROVEEDOR <input type="text" id="txtProvedorAdd"> <br>
+    PRECIO COMPRA <input type="number" id="txtPrecioCompraAdd"> <br>
+    PRECIO VENTA <input type="number" id="txtPrecioVentaAdd"> <br>
+    STOCK <input type="number" id="txtStockAdd"> <br>
+    STOCK MINIMO <input type="number" id="txtStockMinimoAdd"> <br>
+    DESCRIPCION <input type="text" id="txtDescripcionAdd"> <br>
+    <button onclick="add()">AGREGAR</button>
+  </div>
+
+  <!-- SECCIÓN: MODIFICAR -->
+  <div id="secModificar" class="seccion oculta">
+    <h1>Modificar Instrumento</h1>
+    ID INSTRUMENTO <input type="number" id="txtIdUp"><br>
+    NOMBRE <input type="text" id="txtNombreUp"> <br>
+    CATEGORIA <input type="text" id="txtCategoriaUp"> <br>
+    MARCA <input type="text" id="txtMarcaUp"> <br>
+    PROVEEDOR <input type="text" id="txtProvedorUp"> <br>
+    PRECIO COMPRA <input type="number" id="txtPrecioCompraUp"> <br>
+    PRECIO VENTA <input type="number" id="txtPrecioVentaUp"> <br>
+    STOCK <input type="number" id="txtStockUp"> <br>
+    STOCK MINIMO <input type="number" id="txtStockMinimoUp"> <br>
+    DESCRIPCION <input type="text" id="txtDescripcionUp"> <br>
+    <button onclick="update()">MODIFICAR</button>
+  </div>
+
+  <!-- SECCIÓN: ELIMINAR -->
+  <div id="secEliminar" class="seccion oculta">
+    <h1>Eliminar Instrumento</h1>
+    ID INSTRUMENTO <input type="number" id="txtIdDel">
+    <button onclick="delete1()">ELIMINAR</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* ===== ESTILOS DEL PROYECTO - TIENDA DE INSTRUMENTOS ===== */
+
+/* Toda la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Títulos */
+h1 {
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+h2 {
+  color: #555;
+  font-size: 18px;
+}
+
+/* Cajas de texto */
+input {
+  padding: 8px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 220px;
+}
+
+/* Botones */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Cuando pasas el mouse por el botón */
+button:hover {
+  background-color: #2c80b4;
+}
+
+/* Tablas */
+table {
+  margin: 15px auto;          /* centrada */
+  border-collapse: collapse;  /* bordes juntos */
+  background-color: white;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 12px;
+}
+
+td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+}
+
+/* Filas alternadas (una blanca, una grisecita) */
+tr:nth-child(even) {
+  background-color: #eef5fb;
+}
+
+/* Mensaje del login (bienvenido / error) */
+#mensaje {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* ===== LOGIN CON IMAGEN DE FONDO ===== */
+
+/* El fondo solo se aplica en la página de login */
+body.login {
+  background-image: url("https://akamai.sscdn.co/gcs/cifra-blog/es/wp-content/uploads/2025/10/896859f-Tipos-de-instrumentos-musicais.png");
+  background-size: cover;       /* que cubra toda la pantalla */
+  background-position: center;
+  min-height: 100vh;
+  display: flex;                /* para centrar la tarjeta */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tarjeta blanca del login */
+.tarjeta-login {
+  background-color: rgba(255, 255, 255, 0.92); /* blanco casi opaco */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== MENÚ DE LA PÁGINA PRINCIPAL ===== */
+
+.menu {
+  background-color: #2c3e50;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.menu button {
+  background-color: #34495e;
+}
+
+.menu button:hover {
+  background-color: #3498db;
+}
+
+/* Botón de salir en rojo */
+.btn-salir {
+  background-color: #e74c3c !important;
+}
+
+.btn-salir:hover {
+  background-color: #c0392b !important;
+}
+
+/* ===== SECCIONES ===== */
+
+/* Cada sección es una tarjeta blanca */
+.seccion {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 950px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Clase para esconder secciones (la usa el menú) */
+.oculta {
+  display: none;
+}

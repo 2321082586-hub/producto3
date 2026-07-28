@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LOGIN</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="login">
+
+  <div class="tarjeta-login">
+    <h1>🎵 INICIAR SESIÓN</h1>
+    <h2>Tienda de Instrumentos Musicales</h2>
+
+    USUARIO <br>
+    <input type="text" id="txtUsuario"> <br><br>
+    CONTRASEÑA <br>
+    <input type="password" id="txtPassword"> <br><br>
+
+    <button onclick="login()">ENTRAR</button>
+
+    <p id="mensaje"></p>
+  </div>
+
+  <script>
+    let API_URL = "https://usuarios-07y3.onrender.com/api/usuarios";
+
+    function login() {
+      const usuario = document.getElementById("txtUsuario").value;
+      const password = document.getElementById("txtPassword").value;
+      const mensaje = document.getElementById("mensaje");
+
+      mensaje.innerText = "Verificando...";
+
+      fetch(API_URL)
+        .then(res => res.json())
+        .then(data => {
+          // Busca un usuario cuyo email y password coincidan
+          const encontrado = data.find(u => u.email === usuario && u.password === password);
+
+          if (encontrado) {
+            mensaje.innerText = "Bienvenido " + encontrado.nombre + " " + encontrado.apellido;
+            // Guarda el rol y el nombre para usarlos en la página principal
+            sessionStorage.setItem("rol", encontrado.rol);
+            sessionStorage.setItem("nombre", encontrado.nombre);
+            // Redirige a la página de instrumentos después de 1 segundo
+            setTimeout(() => { window.location.href = "index.html"; }, 1000);
+          } else {
+            mensaje.innerText = "Usuario o contraseña incorrectos";
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          mensaje.innerText = "Error al conectar con la API de usuarios";
+        });
+    }
+  </script>
+</body>
+</html>
